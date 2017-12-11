@@ -29,6 +29,7 @@ return [
             'paths'         => [
                 base_path('app/Entities')
             ],
+            'excludePaths'         => [],
             'repository'    => Doctrine\ORM\EntityRepository::class,
             'proxies'       => [
                 'namespace'     => false,
