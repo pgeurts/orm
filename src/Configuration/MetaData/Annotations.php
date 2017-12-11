@@ -13,9 +13,11 @@ class Annotations extends MetaData
      */
     public function resolve(array $settings = [])
     {
-        return (new Configuration())->newDefaultAnnotationDriver(
+        $driver = (new Configuration())->newDefaultAnnotationDriver(
             array_get($settings, 'paths', []),
             array_get($settings, 'simple', false)
         );
+        $driver->addExcludePaths(array_get($settings, 'excludePaths', []));
+        return $driver;
     }
 }
